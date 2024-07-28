@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>CRUD System</title>
+  </head>
+  <body>
+    <h1 class="text-center pt-3">CRUD System</h1>
+    <div class="w-75 m-auto py-4">
+      <label for="Name">Product Name </label>
+      <input
+        id="Name"
+        type="text"
+        class="form-control mb-2"
+        placeholder="Product Name"
+        oninput="nameValidation()"
+      />
+      <div class="alert alert-danger d-none" id="nameMessage">
+        prouduct name must be starts with capital letter and 3-7 small letters
+      </div>
+      <label for="Price"> Product Price </label>
+      <input
+        id="Price"
+        type="number"
+        class="form-control mb-2"
+        placeholder="Product Price"
+        oninput="priceValidation()"
+      />
+      <div class="alert alert-danger d-none" id="priceMessage">
+        please write a correct price
+      </div>
+
+      <label for="Category">Product Category </label>
+      <input
+        id="Category"
+        type="text"
+        class="form-control mb-2"
+        placeholder="Product Category"
+        oninput="categoryValidation()"
+      />
+      <div class="alert alert-danger d-none" id="categoryMessage">
+        please prouduct category must be starts with capital letter and 3-10
+        small letters
+      </div>
+
+      <label for="Description"> Product Description </label>
+      <textarea
+        id="Description"
+        type="text"
+        class="form-control mt-2"
+        placeholder="Product Description"
+        oninput="descriptionValidation()"
+      ></textarea>
+      <div class="alert alert-danger d-none" id="descriptionMessage">
+        please prouduct description must be starts with capital letter
+      </div>
+
+      <button class="btn btn-danger my-3" id="demo" onclick="addNewProduct()">
+        Submit
+      </button>
+      <input
+        id="Search"
+        type="text"
+        class="form-control mb-3"
+        placeholder="Search By Product Name"
+        onkeyup="searchProduct(this.value)"
+      />
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Category</th>
+              <th scope="col">Description</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Update</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
